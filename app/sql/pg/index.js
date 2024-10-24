@@ -1,4 +1,4 @@
-const { Client } = require("pg");
+const { Pool, Client } = require("pg");
 const test = !global.runPrototypes;
 
 if (test) {
