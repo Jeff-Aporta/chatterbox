@@ -1,14 +1,15 @@
 <p align="center">
     <img src="public/src/img/logo/texto/v2-w=1024.png" width=500>
 </p>
+<br/>
+<h2 align="center">
+    Chatterbox:
+    <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
+        https://chatterbox-1ql5.onrender.com/
+    </a>
+</h2>
+<br/>
 <p align="center">
-    <h2 align="center">
-        Chatterbox:
-        <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
-            https://chatterbox-1ql5.onrender.com/
-        </a>
-    </h2>
-    <br/>
     <img src="public/src/img/logo/states/app-w=1024.png" width=300>
 </p>
 
