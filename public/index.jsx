@@ -19,5 +19,3 @@ function App() {
     </Paper>
   );
 }
-
-ReactDOM.render(<App />, document.querySelector("body"));

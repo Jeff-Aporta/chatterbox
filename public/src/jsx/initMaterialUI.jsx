@@ -1,17 +1,43 @@
 Object.assign(window, window["MaterialUI"]);
 
-const themename = localStorage.getItem("theme") ?? "dark";
-
-let palette = {
-  primary: {
-    main: "#194F8F",
-    contrastText: themename == "dark" ? "#fff" : "#000",
-  },
-  secondary: {
-    main: themename == "dark" ? "#363640" : "#ccccff",
-    color: "#fff",
-  },
-};
+let palette = (() => {
+  const white = {
+    main: "#fff",
+    contrastText: "#000",
+  };
+  const black = {
+    main: "#000",
+    contrastText: "#fff",
+  };
+  const contrastText = isThemeDark ? "#fff" : "#000";
+  const uncontrastText = isThemeDark ? "#000" : "#fff";
+  return {
+    primary: {
+      main: "#1E90FF",
+      contrastText,
+    },
+    secondary: {
+      main: isThemeDark ? "#387FC7" : "#ccccff",
+      contrastText,
+    },
+    success: {
+      main: "#32CD32",
+      contrastText,
+    },
+    atentionBlue: {
+      main: "#00BFFF",
+      contrastText: uncontrastText,
+    },
+    atentionGreen: {
+      main: "#00FA9A",
+      contrastText: uncontrastText,
+    },
+    white,
+    black,
+    contrast: isThemeDark ? white : black,
+    uncontrast: isThemeDark ? black : white,
+  };
+})();
 
 const darkTheme = createTheme({
   typography: {
@@ -22,8 +48,8 @@ const darkTheme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#121215",
-      paper: "#121218",
+      default: "#03030f",
+      paper: "#05051f",
     },
     ...palette,
   },
@@ -36,4 +62,5 @@ const lightTheme = createTheme({
   },
 });
 
-let theme = themename == "dark" ? darkTheme : lightTheme;
+let theme = isThemeDark ? darkTheme : lightTheme;
+theme = responsiveFontSizes(theme);

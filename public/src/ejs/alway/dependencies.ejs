@@ -4,4 +4,7 @@
 <script>
   runASCIIMapLoader_inLine(ASCII_MAP_CHATTERBOX.WEB_REACT);
   runASCIIMapLoader_inLine(ASCII_MAP_CHATTERBOX.ALLWAYS);
+
+  const themename = localStorage.getItem("theme") ?? "dark";
+  const isThemeDark = themename == "dark";
 </script>

@@ -1,23 +1,23 @@
 const Components = {
   MenuTop: () => {
     return (
-      <div className="menu-top">
+      <Paper elevation={0} className="menu-top">
         <LogoBanner className="bright-hover" />
         <div className="right">
           {window["login"] ? <ButtonSignup /> : <ButtonLogin />}
         </div>
-      </div>
+      </Paper>
     );
 
     function ButtonSignup() {
       return (
         <Button
           variant="contained"
+          color="atentionBlue"
           endIcon={<i className="fa fa-user-edit" />}
-          color="primary"
           href="/user/unlogged/register"
         >
-          Registrate
+          <span className="ab--tt-uppercase">Registrate</span>
         </Button>
       );
     }
@@ -26,10 +26,11 @@ const Components = {
       return (
         <Button
           endIcon={<i className="fa fa-user" />}
-          color="inherit"
+          variant="contained"
+          color="atentionGreen"
           href="/user/unlogged/login"
         >
-          Iniciar sesión
+          <span className="ab--tt-uppercase">Iniciar sesión</span>
         </Button>
       );
     }

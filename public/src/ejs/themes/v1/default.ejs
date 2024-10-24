@@ -4,11 +4,11 @@
     <%- include(upDir + 'src/ejs/themes/global-theme') %>
     <script>
       runASCIIMapLoader_inLine(`
-          ${ASCII_MAP_CHATTERBOX.DEFAULT}
-
-          📄 <%- tmpltJSX %>
+        ${ASCII_MAP_CHATTERBOX.DEFAULT}
+        
+        📄 <%- tmpltJSX %>
       `);
     </script>
   </head>
-  <body></body>
+  <%- include(upDir + 'src/ejs/alway/body') %>
 </html>

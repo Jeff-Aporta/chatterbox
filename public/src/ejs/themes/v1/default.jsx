@@ -1,5 +1,5 @@
-function Unlogged() {
+function Default() {
   return <ThemeApp.Default />;
 }
 
-ReactDOM.render(<Unlogged />, document.querySelector("body"));
+ReactDOM.render(<Default />, document.querySelector("body"));

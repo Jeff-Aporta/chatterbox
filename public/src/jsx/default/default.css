@@ -1,5 +1,5 @@
 .menu-top {
-  background-color: var(--uncontrast);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
   padding: 10px;
   display: flex;
   justify-content: space-between;
