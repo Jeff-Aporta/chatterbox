@@ -1,7 +1,6 @@
 const path = require("path");
 
 const DEEPEST = 10;
-const PUBLIC = "public";
 
 function deeper(app) {
   let pattern = "";
@@ -15,7 +14,7 @@ function createGET({ app, pattern, deep }) {
   app.get(pattern, (req, res) => {
     const nodes = cargarNodos({ req });
     const last = nodes.at(-1);
-    const template = require("./inferred")({ nodes, last, public: PUBLIC });
+    const template = require("./inferred")({ nodes, last });
 
     if (last === "index") {
       redundanciaIndex(nodes, res);
@@ -33,7 +32,7 @@ function createGET({ app, pattern, deep }) {
 
   function sendProcessStatic(routeArr, res) {
     const last = routeArr.at(-1);
-    const template = path.join(__dirname_index, PUBLIC, ...routeArr);
+    const template = path.join(__dirname_index, "public", ...routeArr);
     require("./processing")({
       template,
       last,

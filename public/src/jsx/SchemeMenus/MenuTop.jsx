@@ -18,7 +18,7 @@ function MenuTop() {
     function Logo() {
       return (
         <div className="logo">
-          <LogoTexto2 className="bright-hover" />
+          <LogoBanner className="bright-hover" />
         </div>
       );
     }

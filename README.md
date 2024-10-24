@@ -1,18 +1,11 @@
 <p align="center">
-    <img src="public/src/img/logo/texto/2-1024.png" width=500>
+    <img src="public/src/img/logo/texto/v2-w=1024.png" width=500>
 </p>
-
-<h1 align="center">
- 🌤️ Mensajes instantaneos, para una conversación vibrante 🐝🐝
-</h1>
-
 <p align="center">
-    <img src="public/src/img/logo/2-1024.png" width=300>
+    <img src="public/src/img/logo/states/app-w=1024.png" width=300>
 </p>
 
-**Buzzly** es una aplicación de mensajería diseñada para mantener conectado a amigos, familiares y contactos, a través de conversaciones rápidas, divertidas y fluidas.
-
-¡Comparte tu día a día, envía mensajes instantáneos, y mantente siempre al tanto de lo que pasa en tu red!
+**ChatterBox**, una innovadora aplicación de mensajería diseñada para conectar a las personas mediante una comunicación fluida y en tiempo real. Con ChatterBox, puedes disfrutar de chats instantáneos, compartir multimedia y mantener conversaciones grupales, todo en una interfaz intuitiva y amigable.
 
 <h1>
     Características Principales

@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 
 function processing(params) {
   const result =
@@ -13,7 +14,19 @@ function processing(params) {
 function processingDefault({ template, res }) {
   if (!res.headersSent) {
     res.sendFile(template);
+    return true;
   }
+}
+
+function getNodesTemplate(template) {
+  const _tmplt = template
+    .replace(global.__dirname_index, "")
+    .split(path.sep)
+    .filter(Boolean);
+  if (_tmplt[0] === "public") {
+    _tmplt.shift();
+  }
+  return _tmplt;
 }
 
 function processingEJS({ template, last, nodes, res }) {
@@ -24,13 +37,7 @@ function processingEJS({ template, last, nodes, res }) {
       .join("");
     const user = {};
     const logged = !!user;
-    const _template = template
-      .replace(__dirname + "/index", "")
-      .split(path.sep)
-      .filter(Boolean);
-    if (_template[0] === PUBLIC) {
-      _template.shift();
-    }
+    const _template = getNodesTemplate(template);
     const filename = _template.at(-1);
     const extension = filename.split(".").pop();
     const filenameJSX = filename.replace(`.${extension}`, ".jsx");
@@ -54,18 +61,47 @@ function processingEJS({ template, last, nodes, res }) {
       ...info,
     };
     res.render(template, variables);
+    return true;
   }
 }
 
-function processingJSX({ template, res }) {
+function processingJSX({ template, res, nodes }) {
   if (template.endsWith(".jsx") && !res.headersSent) {
-    require("../template-general")({ res, _filenameJSX: template });
+    const tmplts = [
+      ...["logged", "unlogged"].map((name) => {
+        return {
+          name,
+          rule: function () {
+            const patternUser = (logstate) => `user/${logstate}`;
+            return nodes.join("/").startsWith(patternUser(this.name));
+          },
+        };
+      }),
+    ];
+    const _filenameJSX = `/${getNodesTemplate(template).join("/")}`;
+    for (const tmpl of tmplts) {
+      if (tmpl.rule()) {
+        require("../ejs/template").search({
+          res,
+          _filenameJSX,
+          search: tmpl.name,
+        });
+        return true;
+      }
+    }
+    require("../ejs/template").search({
+      res,
+      _filenameJSX,
+      search: "default",
+    });
+    return true;
   }
 }
 
 function processingJSON({ template, res }) {
   if (template.endsWith(".json") && !res.headersSent) {
     res.json(template);
+    return true;
   }
 }
 

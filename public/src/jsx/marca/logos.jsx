@@ -1,16 +1,16 @@
-function LogoTexto2(params) {
-  params.width ??= 100;
+function LogoBanner(params) {
+  params.width ??= 160;
   params.href ??= "/";
   return LOAD_IMG_SZS({
-    szs: [150, 512, 1024],
-    src: (sz) => `/src/img/logo/texto/2-${sz}.png`,
+    szs: [1024],
+    src: (sz) => `/src/img/logo/texto/v4-w=${sz}.png`,
     ...params,
   });
 }
-function Logo2(params) {
+function Logo404(params) {
   return LOAD_IMG_SZS({
     szs: [512, 1024],
-    src: (sz) => `/src/img/logo/2-${sz}.png`,
+    src: (sz) => `/src/img/logo/states/404-w=${sz}.png`,
     ...params,
   });
 }

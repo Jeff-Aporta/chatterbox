@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include(upDir + 'src/ejs/themes/global-theme') %>
+    <script>
+      runASCIIMapLoader_inLine(`
+          ${ASCII_MAP_CHATTERBOX.LOGGED}
+
+          📄 <%- tmpltJSX %>
+      `);
+    </script>
+  </head>
+  <body></body>
+</html>

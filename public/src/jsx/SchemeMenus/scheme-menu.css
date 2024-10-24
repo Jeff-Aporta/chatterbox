@@ -62,7 +62,13 @@
 
       .left-top {
         display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 5px;
+
+        .logo {
+          display: inline-block;
+        }
 
         .bars2menuleft {
           cursor: pointer;
@@ -90,8 +96,8 @@
   }
   .page {
     position: relative;
-    .content-app {
-      background-color: brown;
+    .app {
+      /* background-color: brown; */
     }
     .menu {
       &.left-menu {

@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 require("./app/prototypes");
-const sql = require("./app/sql-dynamic");
+const sql = require("./app/sql/pg");
 
 global.__dirname_index = __dirname;
 

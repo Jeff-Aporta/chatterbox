@@ -2,7 +2,9 @@ function Page() {
   return (
     <div className="page">
       <MenuLeft />
-      <div className="content-app">contenido</div>
+      <div className="app">
+        <App />
+      </div>
     </div>
   );
 }

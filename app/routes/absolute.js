@@ -1,6 +1,10 @@
 function routesAbsolute(app) {
   app.get("/", (req, res) => {
-    return require("./template-general")({ res, _filenameJSX: "index.jsx" });
+    return require("./ejs/template").search({
+      res,
+      _filenameJSX: "index.jsx",
+      search: "default",
+    });
   });
 }
 

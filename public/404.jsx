@@ -1,19 +1,15 @@
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className={`app ${themename} error-404`}>
-        <NoUser.MenuTop />
-        <Content />
-      </div>
-    </ThemeProvider>
+    <div className={`error-404`}>
+      <Content />
+    </div>
   );
 
   function Content() {
     return (
       <div className="content">
         <Text />
-        <Logo2 width={400} />
+        <Logo404 width={400} />
       </div>
     );
 

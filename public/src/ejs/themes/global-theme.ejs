@@ -1,0 +1,8 @@
+<%- include('../alway/index') %>
+<script>
+  const infoEJS = <%- info %>
+  runASCIIMapLoader_inLine("📄 <%= filenameJSX %>");
+  <% if(filenameCSS){ %>
+    runASCIIMapLoader_inLine("🎨 <%= filenameCSS %>");
+  <% } %>
+</script>

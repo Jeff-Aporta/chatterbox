@@ -1,5 +1,3 @@
-let debug = false;
-
 let connection;
 
 async function CREATE_DATABASE({ DATABASE }) {
@@ -26,19 +24,10 @@ function CHANGE_DATABASE({ DATABASE }) {
     if (err) {
       throw err;
     }
-    if (debug) {
-      console.log("Conectado a la base de datos", DATABASE);
-    }
   });
 }
 
 async function EXEC_QUERY({ QUERY, MSG }) {
-  if (debug) {
-    console.log("-----------");
-    console.log("QUERY:");
-    console.log(QUERY);
-    console.log("-----------");
-  }
   try {
     const results = await new Promise((resolve, reject) => {
       connection.query(QUERY, (err, results) => {
@@ -48,9 +37,6 @@ async function EXEC_QUERY({ QUERY, MSG }) {
         resolve(results);
       });
     });
-    if (debug) {
-      console.log(MSG);
-    }
     const data = JSON.parse(JSON.stringify(results))[0];
     return data
   } catch (err) {
@@ -58,9 +44,8 @@ async function EXEC_QUERY({ QUERY, MSG }) {
   }
 }
 
-module.exports = (_con, _debug) => {
+module.exports = (_con) => {
   connection = _con;
-  debug = _debug;
   return {
     CREATE_DATABASE,
     CREATE_TABLE,

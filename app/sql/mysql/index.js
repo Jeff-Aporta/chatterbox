@@ -6,7 +6,7 @@ const test = !global.runPrototypes;
 
 if (test) {
   const path = require("path");
-  require(path.resolve(__dirname, "../prototypes"));
+  require(path.resolve(__dirname, "../../prototypes"));
   require("dotenv").config();
 }
 
@@ -52,13 +52,11 @@ async function _test_() {
     TABLE: "usuarios",
     ID: 4,
   });
-  
-  console.log(`Tu nombre es: ${row.getCOL("nombre")} y edad es : ${row.getCOL("edad")}`)
 
-
-
+  console.log(
+    `Tu nombre es: ${row.getCOL("nombre")} y edad es : ${row.getCOL("edad")}`
+  );
 }
-
 
 module.exports = {
   //----------------SQL

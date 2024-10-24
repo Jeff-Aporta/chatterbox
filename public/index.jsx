@@ -1,7 +1,8 @@
 function App() {
   return (
-    <div>
-      <h1>Bienvenid@</h1>
+    <Paper className="container-mp">
+      <Typography variant="h2">Bienvenido</Typography>
+      En construcción.
       <hr />
       <h2>Logged</h2>
       <h2>
@@ -15,7 +16,7 @@ function App() {
       <h2>
         <a href="/user/unlogged/register">register</a>
       </h2>
-    </div>
+    </Paper>
   );
 }
 
