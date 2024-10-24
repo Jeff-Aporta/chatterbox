@@ -8,13 +8,19 @@ if (test) {
 }
 
 (async () => {
-  global.mypgsql = new Client({
-    host: process.env.host,
-    user: process.env.user,
-    password: process.env.password,
-    port: 5432,
-  });
-  await global.mypgsql.connect();
+  if (process.env.connectionString) {
+    global.mypgsql = new Pool({
+      connectionString: process.env.connectionString,
+    });
+  } else {
+    global.mypgsql = new Client({
+      host: process.env.host,
+      user: process.env.user,
+      password: process.env.password,
+      port: 5432,
+    });
+    await global.mypgsql.connect();
+  }
   console.log("PostgreSQL Connected!");
 })();
 

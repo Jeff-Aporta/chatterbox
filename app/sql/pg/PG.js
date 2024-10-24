@@ -1,6 +1,10 @@
-const { Pool } = require('pg');
+const { Pool } = require("pg");
 
 async function CREATE_DATABASE({ DATABASE }) {
+  if (process.env.connectionString) {
+    //Está en producción
+    return;
+  }
   DATABASE = DATABASE.snake_case();
   const query = `SELECT 1 FROM pg_database WHERE datname='${DATABASE}'`;
   const result = await global.mypgsql.query(query);
@@ -20,13 +24,20 @@ async function CREATE_TABLE({ TABLE, IDTYPE = "SERIAL" }) {
 }
 
 function CHANGE_DATABASE({ DATABASE }) {
-  global.mypgsql = new Pool({
-    user: process.env.user,
-    host: process.env.host,
-    database: process.env.db,
-    password: process.env.password,
-    port: 5432,
-  });
+  if (process.env.connectionString) {
+    global.mypgsql = new Pool({
+      connectionString: process.env.connectionString,
+    });
+  } else {
+    global.mypgsql = new Pool({
+      user: process.env.user,
+      host: process.env.host,
+      database: process.env.db,
+      password: process.env.password,
+      port: 5432,
+    });
+  }
+
   console.log(`Connected to database: ${DATABASE}`);
 }
 
