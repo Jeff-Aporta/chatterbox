@@ -3,7 +3,7 @@ function LogoBanner(params) {
   params.href ??= "/";
   return LOAD_IMG_SZS({
     szs: [1024],
-    src: (sz) => `/src/img/logo/texto/v4-w=${sz}.png`,
+    src: (sz) => `/src/img/logo/texto/v4-w=${sz}.svg`,
     ...params,
   });
 }
