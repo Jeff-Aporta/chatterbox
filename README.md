@@ -2,13 +2,14 @@
     <img src="public/src/img/logo/texto/v2-w=1024.png" width=500>
 </p>
 <p align="center">
-    <img src="public/src/img/logo/states/app-w=1024.png" width=300>
-    <br/>
-    <h2>
+    <h2 align="center">
+        Chatterbox:
         <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
-            Chatterbox: https://chatterbox-1ql5.onrender.com/
+            https://chatterbox-1ql5.onrender.com/
         </a>
     </h2>
+    <br/>
+    <img src="public/src/img/logo/states/app-w=1024.png" width=300>
 </p>
 
 **ChatterBox**, una innovadora aplicación de mensajería diseñada para conectar a las personas mediante una comunicación fluida y en tiempo real. Con ChatterBox, puedes disfrutar de chats instantáneos, compartir multimedia y mantener conversaciones grupales, todo en una interfaz intuitiva y amigable.
