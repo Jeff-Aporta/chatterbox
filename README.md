@@ -3,6 +3,9 @@
 </p>
 <p align="center">
     <img src="public/src/img/logo/states/app-w=1024.png" width=300>
+    <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
+        Chatterbox: https://chatterbox-1ql5.onrender.com/
+    </a>
 </p>
 
 **ChatterBox**, una innovadora aplicación de mensajería diseñada para conectar a las personas mediante una comunicación fluida y en tiempo real. Con ChatterBox, puedes disfrutar de chats instantáneos, compartir multimedia y mantener conversaciones grupales, todo en una interfaz intuitiva y amigable.
@@ -24,15 +27,3 @@
 - **Status**: Comparte lo que estás haciendo o cómo te sientes con estados personalizados.
 
 - **Modo Oscuro**: Mantén una apariencia más cómoda para los ojos en cualquier momento del día.
-
-<br>
-<br>
-
-<h2>
-    🌤️ Página provicional en onrender para probar:
-    <br>
-    <br>
-    <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
-        💭 https://chatterbox-1ql5.onrender.com/ 💭
-    </a>
-</h2>
