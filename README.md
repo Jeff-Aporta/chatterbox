@@ -33,6 +33,6 @@
     <br>
     <br>
     <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
-        💭 https://chatterbox-1ql5.onrender.com/ 💭🦜🦜🦜📦
+        💭 https://chatterbox-1ql5.onrender.com/ 💭
     </a>
 </h2>
