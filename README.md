@@ -3,7 +3,7 @@
 </p>
 <br/>
 <h2 align="center">
-    Chatterbox:
+    Onrender:
     <a href="https://chatterbox-1ql5.onrender.com/" target="_blank">
         https://chatterbox-1ql5.onrender.com/
     </a>
